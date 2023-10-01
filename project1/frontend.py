@@ -16,16 +16,18 @@ class FrontendRPCServer:
     ## put: This function routes requests from clients to proper
     ## servers that are responsible for inserting a new key-value
     ## pair or updating an existing one.
+
+    self.primaryServer = 0
     def put(self, key, value):
-        serverId = key % len(kvsServers)
-        return kvsServers[serverId].put(key, value)
+        # serverId = key % len(kvsServers)
+        return kvsServers[self.primaryServer].put(key, value)
 
     ## get: This function routes requests from clients to proper
     ## servers that are responsible for getting the value
     ## associated with the given key.
     def get(self, key):
-        serverId = key % len(kvsServers)
-        return kvsServers[serverId].get(key)
+        # serverId = key % len(kvsServers)
+        return kvsServers[self.primaryServer].get(key)
 
     ## printKVPairs: This function routes requests to servers
     ## matched with the given serverIds.
