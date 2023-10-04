@@ -1,6 +1,8 @@
-FROM sekwonlee/kvs:base
+FROM anshul746/kvs:base
+# FROM sekwonlee/kvs:base
 
-MAINTAINER Sekwon Lee <sklee@cs.utexas.edu> version: 0.1
+
+# MAINTAINER Sekwon Lee <sklee@cs.utexas.edu> version: 0.1
 
 USER root
 
